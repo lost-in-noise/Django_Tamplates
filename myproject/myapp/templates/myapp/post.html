@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+</head>
+<body>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p>Published on: {{ post.date|date:"F d, Y" }}</p>
+    
+    {% if post.author %}
+        <p>Written by: {{ post.author }}</p>
+    {% else %}
+        <p>Author: Unknown</p>
+    {% endif %}
+    
+    <h2>Comments:</h2>
+    <ul>
+        {% for comment in post.comments %}
+            <li>{{ comment.user }}: {{ comment.text }}</li>
+        {% empty %}
+            <li>No comments yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
