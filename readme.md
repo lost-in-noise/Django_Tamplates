@@ -4,5 +4,4 @@
 To implement Django templates and template tags and add static files for styling.
 
 ## Requirements
-- Python
-- Django
+- Python 3.12.6
