@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +11,13 @@
     <h1>{{ post.title }}</h1>
     <p>{{ post.content }}</p>
     <p>Published on: {{ post.date|date:"F d, Y" }}</p>
-    
+
     {% if post.author %}
         <p>Written by: {{ post.author }}</p>
     {% else %}
         <p>Author: Unknown</p>
     {% endif %}
-    
+
     <h2>Comments:</h2>
     <ul>
         {% for comment in post.comments %}
